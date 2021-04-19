@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pagina.css">
+  <title>carro</title>
+</head>
+<body>
+  <h1>SISTEMA DE DADOS DE CARROS</h1>
+  <div id="page">
+    <div class="field" id="adicionar"> <!--absoluta-->
+      <form onsubmit="addIdToPath('form-get', 'http://localhost:6789/carro/')" id="form-add" method="get">
+        <label id="title">ADICIONAR CARRO</label>
+    
+        <label for="nome-carro">Nome:</label>
+        <input type="text" name="nome">
+    
+        <label for="marca">Marca:</label>
+        <input type="text" name="marca">
+    
+        <label for="ano">Ano:</label>
+        <input type="number" name="ano">
+    
+        <button type="submit" id="bt-adicionar">Adicionar</button>
+      </form>
+    </div>
+
+    <div class="field" id="remover">
+      <form onsubmit="addIdToPath('form-delete', 'http://localhost:6789/produto/delete/')" method="get" id="form-delete">
+        <label id="title">REMOVER CARRO</label>
+        
+        <label for="id">ID:</label>
+        <input type="text" name="id">
+
+        <button type="submit" id="bt-remover">Remover</button>
+      </form>
+    </div>
+    
+    <div id="listar">
+      <div class="field" id="listar">
+        <form onsubmit="addIdToPath('form-get', 'http://localhost:6789/carro/')" method="get" id="form-get">
+          <label id="title">LISTAR CARROS</label>
+    
+          <label for="id">ID:</label>
+          <input type="text" name="id">
+    
+          <button type="submit" id="bt-consultar">Consultar</button>
+        </form>
+      </div>
+      <div>
+        <form action="http://localhost:6789/produto"  method="get" id="form-all">
+          <button type="submit" id="bt-listarTodos">Listar Todos</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+	<section class="section--container__responsive" style="visibility: hidden" id="product-result">
+		<table border="1">
+			<tr>
+				<td>Codigo:</td>
+				<td><span id="Codigo">Sem Resultado</span></td>
+			</tr>
+			<tr>
+				<td>Nome:</td>
+				<td><span id="nome">Sem Resultado</span></td>
+			</tr>
+			<tr>
+				<td>Marca:</td>
+				<td><span id="marca">Sem Resultado</span></td>
+			</tr>
+			<tr>
+				<td>Ano:</td>
+				<td><span id="ano">Sem Resultado</span></td>
+			</tr>
+		</table>
+	</section>
+</body>
+</html>
